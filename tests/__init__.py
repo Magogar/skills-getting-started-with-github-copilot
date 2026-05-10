@@ -1,21 +1,6 @@
 """
-Backend tests for the FastAPI application.
-Uses pytest and the AAA pattern for clear Arrange-Act-Assert structure.
+Tests package for the FastAPI backend.
 """
-
-import copy
-
-from fastapi.testclient import TestClient
-
-from src.app import app, activities
-
-client = TestClient(app)
-initial_activities = copy.deepcopy(activities)
-
-
-def restore_activities():
-    activities.clear()
-    activities.update(copy.deepcopy(initial_activities))
 
 
 def test_get_activities_returns_all_activities():
